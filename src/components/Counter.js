@@ -9,22 +9,36 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-    flexDirection: 'row',
-    flexWrap: 'wrap'
+    alignItems: 'center'
   },
 
   button: {
     width: 60,
     height: 60,
-    borderColor: '#000000',
+    borderColor: '#999999',
     borderWidth: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderRadius: 10,
+    marginLeft: 20,
+    marginRight: 20
   },
 
-  wide: {
+  wideButton: {
+    width: 160,
+    height: 60,
+    borderColor: '#999999',
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10
+  },
+
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 40,
+    marginBottom: 40
   }
 });
 
@@ -46,17 +60,21 @@ export default class Counter extends Component {
     const { counter, actions: { increment, incrementIfOdd, decrement } } = this.props;
     return (
       <View style={styles.container}>
-        <Text style={styles.wide}>Clicked: {counter} times</Text>
+        <View style={styles.wideButton}>
+          <Text>Clicked: {counter} times</Text>
+        </View>
 
-        <TouchableHighlight onPress={increment} style={styles.button}>
-          <Text>+</Text>
-        </TouchableHighlight>
+        <View style={styles.buttons}>
+          <TouchableHighlight onPress={decrement} style={styles.button}>
+            <Text>-</Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={decrement} style={styles.button}>
-          <Text>-</Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={increment} style={styles.button}>
+            <Text>+</Text>
+          </TouchableHighlight>
+        </View>
 
-        <TouchableHighlight onPress={incrementIfOdd} style={styles.wide}>
+        <TouchableHighlight onPress={incrementIfOdd} style={styles.wideButton}>
           <Text>Increment if odd</Text>
         </TouchableHighlight>
       </View>

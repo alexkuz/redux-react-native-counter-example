@@ -4,7 +4,7 @@ let initialState = 0;
 
 const increment = state => state + 1;
 
-const decrement = state => state + 1;
+const decrement = state => state - 1;
 
 export default function counter(state = initialState, action) {
   return ({
