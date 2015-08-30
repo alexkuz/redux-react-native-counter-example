@@ -1,18 +1,18 @@
-var { INCREMENT_COUNTER, DECREMENT_COUNTER } = require('../constants/ActionTypes');
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes';
 
-var increment = () => {
+export const increment = () => {
   return {
     type: INCREMENT_COUNTER
   };
 }
 
-var decrement = () => {
+export const decrement = () => {
   return {
     type: DECREMENT_COUNTER
   };
 }
 
-var incrementIfOdd = () => {
+export const incrementIfOdd = () => {
   return (dispatch, getState) => {
     const { counter } = getState();
 
@@ -24,17 +24,10 @@ var incrementIfOdd = () => {
   }
 }
 
-var incrementAsync = () => {
+export const incrementAsync = () => {
   return dispatch => {
     setTimeout(() => {
       dispatch(increment());
     }, 1000);
   };
 }
-
-module.exports = {
-  increment,
-  decrement,
-  incrementIfOdd,
-  incrementAsync
-};

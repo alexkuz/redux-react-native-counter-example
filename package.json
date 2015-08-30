@@ -3,10 +3,27 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack -p",
+    "start": "./node_modules/.bin/react-native-webpack-server start"
   },
   "dependencies": {
     "react-native": "^0.8.0",
-    "redux": "^0.12.0"
+    "react-redux": "^1.0.1",
+    "redux": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babel-eslint": "^4.1.0",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.20",
+    "eslint": "^1.3.1",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-babel": "^2.1.1",
+    "eslint-plugin-react": "^3.3.0",
+    "react-hot-loader": "^2.0.0-alpha-4",
+    "react-native-webpack-server": "git+https://github.com/elliottsj/react-native-webpack-server.git#f2f1bd297a6f2580e91bb84ecbd9dd91d95c0671",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.10.1"
   }
 }
